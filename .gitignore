@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+.env
+.venv/
+venv/
+ENV/
+*.tmp
+frame_*.jpg
+new_video_frame_*.jpg
+.system_generated/
