@@ -175,6 +175,15 @@ with gr.Blocks(title="Aegis AI Surveillance Suite") as demo:
 
             analyze_btn = gr.Button("Analyze Stream", variant="primary", size="lg")
 
+            gr.Examples(
+                examples=[
+                    ["sample_videos/155164-809618953.mp4", "Classroom / Exam Hall (CCTV)", 3],
+                    ["sample_videos/7092083-hd_1920_1080_30fps.mp4", "Classroom / Exam Hall (CCTV)", 3]
+                ],
+                inputs=[video_input, mode_select, frame_skip_slider],
+                label="Quick Sample Videos (Click to Load)"
+            )
+
         with gr.Column(scale=6):
             gr.Markdown("<div class='section-title'>2. Annotated Output</div>")
             status_banner = gr.Markdown("Ready for examination video stream.")
@@ -214,4 +223,4 @@ with gr.Blocks(title="Aegis AI Surveillance Suite") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="127.0.0.1", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, share=True)
